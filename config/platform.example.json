@@ -1,0 +1,35 @@
+{
+  "schema_version": "design-0.1",
+  "phase": "phase01",
+  "enabled": false,
+  "cluster_id": "ce_cluster",
+  "slurm": {
+    "mode": "mock",
+    "live_access_enabled": false,
+    "command_timeout_seconds": 10,
+    "max_output_bytes": 1048576,
+    "max_concurrency": 1,
+    "minimum_poll_interval_seconds": 30,
+    "cache_ttl_seconds": 60,
+    "max_stale_seconds": 300
+  },
+  "registry": {
+    "backend": "postgresql",
+    "dsn_secret_ref": null,
+    "allow_import": false
+  },
+  "mcp": {
+    "transport": "stdio",
+    "allow_mutations": false
+  },
+  "executor": {
+    "enabled": false
+  },
+  "discovery": {
+    "approved_roots": [],
+    "follow_symlinks": false
+  },
+  "audit": {
+    "redact_sensitive_fields": true
+  }
+}

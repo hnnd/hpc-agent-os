@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hpc-agent-os"
+version = "0.5.2"
+description = "Read-only, identity-scoped HPC MCP services"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["mcp==2.3.0", "pydantic==2.14.0", "sqlalchemy==2.1.4", "alembic==1.20.0", "psycopg[binary]==3.3.6"]
+
+[project.scripts]
+hpc-agent-os = "hpc_agent_os.cli:main"
+
+[dependency-groups]
+dev = ["jsonschema==4.26.0", "hatchling==1.32.4", "pytest==9.1.1", "pytest-asyncio>=1.0", "pytest-cov>=6", "ruff>=0.11"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hpc_agent_os"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["automation"]
+asyncio_mode = "auto"
+addopts = "-ra"
+markers = ["postgres: isolated PostgreSQL integration", "protocol: real stdio MCP protocol"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

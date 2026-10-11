@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hpc-agent-os-app"
+version = "0.6.0"
+description = "Owner-scoped application CLI and declarative HPC plugins"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["hpc-agent-os==0.5.2"]
+
+[project.scripts]
+hpc-agent-app = "hpc_agent_os_app.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hpc_agent_os_app"]

@@ -1,0 +1,125 @@
+{
+  "$defs": {
+    "RegistryConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "const": "postgresql",
+          "default": "postgresql",
+          "title": "Backend",
+          "type": "string"
+        },
+        "dsn_secret_ref": {
+          "const": "HPC_REGISTRY_DSN",
+          "default": "HPC_REGISTRY_DSN",
+          "title": "Dsn Secret Ref",
+          "type": "string"
+        }
+      },
+      "title": "RegistryConfig",
+      "type": "object"
+    },
+    "SlurmConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "default": "mock",
+          "enum": [
+            "mock",
+            "cli"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "live_access_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Live Access Enabled",
+          "type": "boolean"
+        },
+        "command_timeout_seconds": {
+          "default": 10.0,
+          "exclusiveMinimum": 0,
+          "maximum": 30,
+          "title": "Command Timeout Seconds",
+          "type": "number"
+        },
+        "max_output_bytes": {
+          "default": 1048576,
+          "maximum": 1048576,
+          "minimum": 1024,
+          "title": "Max Output Bytes",
+          "type": "integer"
+        },
+        "minimum_poll_interval_seconds": {
+          "default": 30.0,
+          "minimum": 30,
+          "title": "Minimum Poll Interval Seconds",
+          "type": "number"
+        },
+        "cache_ttl_seconds": {
+          "default": 60.0,
+          "minimum": 30,
+          "title": "Cache Ttl Seconds",
+          "type": "number"
+        },
+        "max_stale_seconds": {
+          "default": 300.0,
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Max Stale Seconds",
+          "type": "number"
+        },
+        "max_concurrency": {
+          "const": 1,
+          "default": 1,
+          "title": "Max Concurrency",
+          "type": "integer"
+        }
+      },
+      "title": "SlurmConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "phase": {
+      "const": "phase2",
+      "default": "phase2",
+      "title": "Phase",
+      "type": "string"
+    },
+    "cluster_id": {
+      "default": "fixture-cluster",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "slurm": {
+      "$ref": "#/$defs/SlurmConfig"
+    },
+    "registry": {
+      "$ref": "#/$defs/RegistryConfig"
+    },
+    "transport": {
+      "const": "stdio",
+      "default": "stdio",
+      "title": "Transport",
+      "type": "string"
+    },
+    "allow_mutations": {
+      "const": false,
+      "default": false,
+      "title": "Allow Mutations",
+      "type": "boolean"
+    }
+  },
+  "title": "Config",
+  "type": "object"
+}

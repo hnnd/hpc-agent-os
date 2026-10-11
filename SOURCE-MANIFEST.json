@@ -1,0 +1,600 @@
+{
+  "format": "hpc-agent-os-source-manifest/1",
+  "core_version": "0.5.2",
+  "application_version": "0.6.0",
+  "scope": "Derived software-only snapshot; no original Git history or paper/model corpus.",
+  "files": [
+    {
+      "path": ".agents/skills/README.md",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "dc116b5b89ddab8736e2f75f234b46d6d9f9b83818938484d8a45666d8809438"
+    },
+    {
+      "path": ".agents/skills/cluster-health/SKILL.md",
+      "source_path": ".agents/skills/cluster-health/SKILL.md",
+      "source_sha256": "f6fb11d028c9402e41ff789fe02252be187671442f63d41e9f9291861fe93af6",
+      "published_sha256": "f6fb11d028c9402e41ff789fe02252be187671442f63d41e9f9291861fe93af6"
+    },
+    {
+      "path": ".agents/skills/database-discovery/SKILL.md",
+      "source_path": ".agents/skills/database-discovery/SKILL.md",
+      "source_sha256": "caf8c56834bb9ada91b4190bbc13a57579e5dff2e52d18927e9f0e1278bcdb44",
+      "published_sha256": "caf8c56834bb9ada91b4190bbc13a57579e5dff2e52d18927e9f0e1278bcdb44"
+    },
+    {
+      "path": ".agents/skills/hpc-plugin-developer/SKILL.md",
+      "source_path": ".agents/skills/hpc-plugin-developer/SKILL.md",
+      "source_sha256": "290b9045a304ba26d745ca1e3d93ad29fff4dd8b79dba54421e91c50b834b729",
+      "published_sha256": "7d3afe6c3db71bf36ce3415e413c4aab964a6a4c60483e49aaa8410093d305f8"
+    },
+    {
+      "path": ".agents/skills/hpc-plugin-developer/agents/openai.yaml",
+      "source_path": ".agents/skills/hpc-plugin-developer/agents/openai.yaml",
+      "source_sha256": "e4644acf6587a64365ba2f5dc6b6640ee40df085efc65601eec76269272dd497",
+      "published_sha256": "e4644acf6587a64365ba2f5dc6b6640ee40df085efc65601eec76269272dd497"
+    },
+    {
+      "path": ".agents/skills/hpc-plugin-developer/references/testing.md",
+      "source_path": ".agents/skills/hpc-plugin-developer/references/testing.md",
+      "source_sha256": "49cc23f32d1d8975bb9200b55319bd59bdb18bf029ca7b116c5aa8fbe865c6f3",
+      "published_sha256": "49cc23f32d1d8975bb9200b55319bd59bdb18bf029ca7b116c5aa8fbe865c6f3"
+    },
+    {
+      "path": ".agents/skills/hpc-plugin-developer/scripts/check_plugin.py",
+      "source_path": ".agents/skills/hpc-plugin-developer/scripts/check_plugin.py",
+      "source_sha256": "2a543bda1aeb8f6bd34b1579f7575f17afcff93cf052cc621f5f654175e12996",
+      "published_sha256": "2a543bda1aeb8f6bd34b1579f7575f17afcff93cf052cc621f5f654175e12996"
+    },
+    {
+      "path": ".agents/skills/software-discovery/SKILL.md",
+      "source_path": ".agents/skills/software-discovery/SKILL.md",
+      "source_sha256": "7d9152ca8522ac84462dc02f2fed0bafb62b4b99a913798c8f294d315df1cae8",
+      "published_sha256": "7d9152ca8522ac84462dc02f2fed0bafb62b4b99a913798c8f294d315df1cae8"
+    },
+    {
+      "path": ".gitignore",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "cd60abff17e0734ba1f65c4dce62ff2f05a94a247c894dabb36c0be0c56a837a"
+    },
+    {
+      "path": ".python-version",
+      "source_path": ".python-version",
+      "source_sha256": "aa0d6581054e6e4ff3f91839deca7a854ad37221b8784d060b42d0f847ff1a3b",
+      "published_sha256": "aa0d6581054e6e4ff3f91839deca7a854ad37221b8784d060b42d0f847ff1a3b"
+    },
+    {
+      "path": "AGENTS.md",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "a890ebd554dd667f70d80483753b0d925ffa9343e1d8b31b17d14dd6aa691a52"
+    },
+    {
+      "path": "LICENSE",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "MIT license selected by the author; standard text from GitHub license API.",
+      "published_sha256": "a63885c1d9f8ede3fbff653a131b96693f5fb454bcacbd0a74b393748ba2a4bb"
+    },
+    {
+      "path": "README.md",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility. MIT licensing metadata/documentation approved by the author.",
+      "published_sha256": "4c7f809a7bfb7ae432b7b1f6cc640bebe96a937b858befe25da5d60fae4eb12c"
+    },
+    {
+      "path": "SOURCE-MANIFEST.md",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility. MIT licensing metadata/documentation approved by the author.",
+      "published_sha256": "d825cf1a83dee305c3524aeb940e3e9b4b09a6b3d668c965099338ff9e2b1b65"
+    },
+    {
+      "path": "alembic.ini",
+      "source_path": "alembic.ini",
+      "source_sha256": "8965c450bfd77867a3b02b26c5a0cfce35002fbba0f57fd2cd25aa0009393d70",
+      "published_sha256": "8965c450bfd77867a3b02b26c5a0cfce35002fbba0f57fd2cd25aa0009393d70"
+    },
+    {
+      "path": "application/LICENSE",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "MIT license selected by the author; standard text from GitHub license API.",
+      "published_sha256": "a63885c1d9f8ede3fbff653a131b96693f5fb454bcacbd0a74b393748ba2a4bb"
+    },
+    {
+      "path": "application/README.md",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "7eec0ccdafd5b0ce7eddb31f48329ab83b67195dceb7fae36a53095ebff25ed4"
+    },
+    {
+      "path": "application/export_schemas.py",
+      "source_path": "application/export_schemas.py",
+      "source_sha256": "bf53a2db626985d49e5af4adc051350ed7249dc0cd1a11fbb8ee17a5b21e5f4e",
+      "published_sha256": "adbe87685b1c228754194043fa91fb56b38e044e9e663e1b6a1b94fb5b55d37a"
+    },
+    {
+      "path": "application/plugins/example.json",
+      "source_path": "application/plugins/example.json",
+      "source_sha256": "f5a2c2fe2a83a5a292ee91a0a93803a7a70da8a12c90956d0fa5f869ffd53548",
+      "published_sha256": "f5a2c2fe2a83a5a292ee91a0a93803a7a70da8a12c90956d0fa5f869ffd53548"
+    },
+    {
+      "path": "application/pyproject.toml",
+      "source_path": "application/pyproject.toml",
+      "source_sha256": "3a6bb9b26b74acd3513ef9d12b19d7a9e0d1a0947fa2f9335829effb79b92b4e",
+      "published_sha256": "25a54b6115fb83f9d7e97a5fc0dec5194e9cfbb9585278cfced2d9ba3120261f",
+      "derivation": " MIT licensing metadata/documentation approved by the author."
+    },
+    {
+      "path": "application/schemas/plugin.schema.json",
+      "source_path": "application/schemas/plugin.schema.json",
+      "source_sha256": "5ff0855a95dc489d93747a5ce6d5ff9b1194e2b758227e143186c8fa9d4ae9da",
+      "published_sha256": "5ff0855a95dc489d93747a5ce6d5ff9b1194e2b758227e143186c8fa9d4ae9da"
+    },
+    {
+      "path": "application/schemas/provenance.schema.json",
+      "source_path": "application/schemas/provenance.schema.json",
+      "source_sha256": "78ad75c1c3cdc5de43017d81f3fa42ef54205b157258a1f04bf5560729d28a7b",
+      "published_sha256": "78ad75c1c3cdc5de43017d81f3fa42ef54205b157258a1f04bf5560729d28a7b"
+    },
+    {
+      "path": "application/schemas/verification.schema.json",
+      "source_path": "application/schemas/verification.schema.json",
+      "source_sha256": "f14f0029a7181654d665a20be37589938ce85d32428e901642df1556a8ae4cc2",
+      "published_sha256": "f14f0029a7181654d665a20be37589938ce85d32428e901642df1556a8ae4cc2"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/__init__.py",
+      "source_path": "application/src/hpc_agent_os_app/__init__.py",
+      "source_sha256": "b7e79a3fc634ff15a221f83add5a27d834e0158a85d5e24d752e6177dc69af86",
+      "published_sha256": "b7e79a3fc634ff15a221f83add5a27d834e0158a85d5e24d752e6177dc69af86"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/application.py",
+      "source_path": "application/src/hpc_agent_os_app/application.py",
+      "source_sha256": "f74c6effe72ee311622c829c68b6a30ad59b05516e77f058ba58c32f69d43e86",
+      "published_sha256": "f74c6effe72ee311622c829c68b6a30ad59b05516e77f058ba58c32f69d43e86"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/backend.py",
+      "source_path": "application/src/hpc_agent_os_app/backend.py",
+      "source_sha256": "0cc9988ee4e83df97fcbf6530911c642a506fad9e4be131d0a500f6c2046d855",
+      "published_sha256": "8cd99cb78e73316a03036f5170ffe624c8b7e260182a879f5dbfba122c4cd7db"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/cli.py",
+      "source_path": "application/src/hpc_agent_os_app/cli.py",
+      "source_sha256": "c2f025261570cc686d44d8370bcb6f2e4a93b4c623f13f7c013753094b3736fa",
+      "published_sha256": "c2f025261570cc686d44d8370bcb6f2e4a93b4c623f13f7c013753094b3736fa"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/files.py",
+      "source_path": "application/src/hpc_agent_os_app/files.py",
+      "source_sha256": "ef676e672a95ba886b542510df9c62d7552d6f78761e1e9c4aeb93c7b86a1ce0",
+      "published_sha256": "ef676e672a95ba886b542510df9c62d7552d6f78761e1e9c4aeb93c7b86a1ce0"
+    },
+    {
+      "path": "application/src/hpc_agent_os_app/plugins.py",
+      "source_path": "application/src/hpc_agent_os_app/plugins.py",
+      "source_sha256": "228dbefb1cff10a0c1ca4e8aea8b4c7edce6e50d2a3e2ec99e3105a894b56162",
+      "published_sha256": "228dbefb1cff10a0c1ca4e8aea8b4c7edce6e50d2a3e2ec99e3105a894b56162"
+    },
+    {
+      "path": "application/tests/conftest.py",
+      "source_path": "application/tests/conftest.py",
+      "source_sha256": "6af83855fe6f9dad969bf3f40b2aa1324b8bf54fe540c3b84d6b74e60d33ce85",
+      "published_sha256": "6af83855fe6f9dad969bf3f40b2aa1324b8bf54fe540c3b84d6b74e60d33ce85"
+    },
+    {
+      "path": "application/tests/test_application.py",
+      "source_path": "application/tests/test_application.py",
+      "source_sha256": "c18f3dfaaad62a45b02c9b77379018718698a05bb147cc1e4c333532f46afab6",
+      "published_sha256": "c18f3dfaaad62a45b02c9b77379018718698a05bb147cc1e4c333532f46afab6"
+    },
+    {
+      "path": "application/tests/test_plugin_skill.py",
+      "source_path": "application/tests/test_plugin_skill.py",
+      "source_sha256": "d3e746b0aaf1dd9575c4b1a12063a77e8e2da9ce2140cd346e44eb02237d5188",
+      "published_sha256": "d3e746b0aaf1dd9575c4b1a12063a77e8e2da9ce2140cd346e44eb02237d5188"
+    },
+    {
+      "path": "application/tests/test_postgres.py",
+      "source_path": "application/tests/test_postgres.py",
+      "source_sha256": "91660ac791f2f93a44422016a93fc20ff81ad9b5ad5d1cc4501ea47ee2b791c6",
+      "published_sha256": "d885fb4e12c46a5144ad68cd2d6fe636715edc6473aadf652de170c5ff98ede6"
+    },
+    {
+      "path": "application/verify.sh",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "ab8b59787d288578ca28463311d4e609de655836f7bb634c2cf07a8e3bfce95c"
+    },
+    {
+      "path": "automation/bootstrap-dev.sh",
+      "source_path": "automation/bootstrap-dev.sh",
+      "source_sha256": "1e64989de1a03271914d09a3b053572235f7dcd421f59274500c8cdda6efff05",
+      "published_sha256": "1e64989de1a03271914d09a3b053572235f7dcd421f59274500c8cdda6efff05"
+    },
+    {
+      "path": "automation/catalog_schema.py",
+      "source_path": "automation/catalog_admin.py",
+      "source_sha256": "5e67ea3da4e29d97fb7a1226408437ea4faf1e829fd0e7229ebcfe7f9c356748",
+      "derivation": "Extract initialize_schema unchanged; retain only psycopg and DDL imports.",
+      "published_sha256": "b86e7b7c789c4c0543051bf1d6831bed979ca097e6ac7252a8f4cd4efebfb946"
+    },
+    {
+      "path": "automation/check_postgres_lock.py",
+      "source_path": "automation/check_postgres_lock.py",
+      "source_sha256": "20ecbe6aef2ccc22faf633bf16bdd37a72127800809a098fe1d6526802361652",
+      "published_sha256": "20ecbe6aef2ccc22faf633bf16bdd37a72127800809a098fe1d6526802361652"
+    },
+    {
+      "path": "automation/check_source_manifest.py",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "04ed81607e89e22403b326856d969ec38aa7e8fb94dfd3bd6ab520b6de3219ea"
+    },
+    {
+      "path": "automation/demo.py",
+      "source_path": "automation/demo.py",
+      "source_sha256": "93c4c582f4fdc866132b7c823e83a561d51ee3fc8cf37996438d788eae29a8c7",
+      "published_sha256": "93c4c582f4fdc866132b7c823e83a561d51ee3fc8cf37996438d788eae29a8c7"
+    },
+    {
+      "path": "automation/export_schemas.py",
+      "source_path": "automation/export_schemas.py",
+      "source_sha256": "36229c6a6ed7a41feeea9ad5bba0ee420a0ba64c424c5edc128c6f6895869b86",
+      "published_sha256": "3dfc3ce2d971990bdf8325076d61aab6ba2b01f0591ebad0a4588e8ce58b958b"
+    },
+    {
+      "path": "automation/fixture_postgres.py",
+      "source_path": "automation/fixture_postgres.py",
+      "source_sha256": "aeaeb4668c51a1f9031921932802ce4bbb6df86b3727a4de49e0f93469fdeef7",
+      "published_sha256": "aeaeb4668c51a1f9031921932802ce4bbb6df86b3727a4de49e0f93469fdeef7"
+    },
+    {
+      "path": "automation/fixture_preflight.py",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "ce7b2bb45b3f1e15cc799a34a34182bd1fe675f0d60d119ee7f2ebd78aad9039"
+    },
+    {
+      "path": "automation/operations_schema.py",
+      "source_path": "automation/phase4_admin.py",
+      "source_sha256": "fdd186eac94486eca6cae70cc3236ebe87d429685c31e324b7e28f5a71bb3677",
+      "derivation": "Extract initialize_schema unchanged; retain only psycopg and DDL imports.",
+      "published_sha256": "4b33da724cf002dad0bc1edc3bbee2a56a00c703e0f5d097a82f866ffd3c57bc"
+    },
+    {
+      "path": "automation/templates/mcp.service.in",
+      "source_path": "automation/templates/mcp.service.in",
+      "source_sha256": "f261cd8185dff6bdeb96f219c48b567233b6ec0999707f836674cbefc1cc1883",
+      "published_sha256": "f261cd8185dff6bdeb96f219c48b567233b6ec0999707f836674cbefc1cc1883"
+    },
+    {
+      "path": "bin/hpc-agent-os",
+      "source_path": "bin/hpc-agent-os",
+      "source_sha256": "2763cdc33957d7255d81d10c20484222253d8077bb0fe6f63c92f006e2cfe575",
+      "published_sha256": "2763cdc33957d7255d81d10c20484222253d8077bb0fe6f63c92f006e2cfe575"
+    },
+    {
+      "path": "config/phase2.mock.json",
+      "source_path": "config/phase2.mock.json",
+      "source_sha256": "c20bf213b86cf8b17a161e5a148a87da541d91c7f571e1160402cbe64575726f",
+      "published_sha256": "c20bf213b86cf8b17a161e5a148a87da541d91c7f571e1160402cbe64575726f"
+    },
+    {
+      "path": "config/platform.example.json",
+      "source_path": "config/platform.example.json",
+      "source_sha256": "6eb29b8b1cb5796534e76b32d51a9a35656e3a1534ee94cb65c09e6635822a38",
+      "published_sha256": "6eb29b8b1cb5796534e76b32d51a9a35656e3a1534ee94cb65c09e6635822a38"
+    },
+    {
+      "path": "config/postgres-linux-64.lock",
+      "source_path": "config/postgres-linux-64.lock",
+      "source_sha256": "8aa39bf6f5f49e7e8af01dd59f3524f07154a332af12cce044ced7a9f4c80de6",
+      "published_sha256": "8aa39bf6f5f49e7e8af01dd59f3524f07154a332af12cce044ced7a9f4c80de6"
+    },
+    {
+      "path": "mcp-servers/database.tools.json",
+      "source_path": "mcp-servers/database.tools.json",
+      "source_sha256": "02e8f3db83d1cab55bf96a1d73ded01d796f1a9b6a7141cca65ec7cc1b8df934",
+      "published_sha256": "02e8f3db83d1cab55bf96a1d73ded01d796f1a9b6a7141cca65ec7cc1b8df934"
+    },
+    {
+      "path": "mcp-servers/operations.tools.json",
+      "source_path": "mcp-servers/operations.tools.json",
+      "source_sha256": "49cd6cc652f94a1f7b2074e01d6ebf0da757c70bd57639b9b4fe78c15c6d171f",
+      "published_sha256": "49cd6cc652f94a1f7b2074e01d6ebf0da757c70bd57639b9b4fe78c15c6d171f"
+    },
+    {
+      "path": "mcp-servers/slurm.tools.json",
+      "source_path": "mcp-servers/slurm.tools.json",
+      "source_sha256": "aed73943a48fc2597988bb59ac93d518cc3cf9fec754f2ab97a925ab53ccabb1",
+      "published_sha256": "aed73943a48fc2597988bb59ac93d518cc3cf9fec754f2ab97a925ab53ccabb1"
+    },
+    {
+      "path": "mcp-servers/software.tools.json",
+      "source_path": "mcp-servers/software.tools.json",
+      "source_sha256": "f52438ce9fbf62b721bd72405f5d2cdb1fa396cd9af5046e662ca3c3e19598f9",
+      "published_sha256": "f52438ce9fbf62b721bd72405f5d2cdb1fa396cd9af5046e662ca3c3e19598f9"
+    },
+    {
+      "path": "migrations/env.py",
+      "source_path": "migrations/env.py",
+      "source_sha256": "2e2c6f85c78bc596a2e78c6ed24bd94e62fb2e3b74c2e86daed2373a4f939289",
+      "published_sha256": "2e2c6f85c78bc596a2e78c6ed24bd94e62fb2e3b74c2e86daed2373a4f939289"
+    },
+    {
+      "path": "migrations/versions/0001_registry.py",
+      "source_path": "migrations/versions/0001_registry.py",
+      "source_sha256": "a221e714547bd87df98aec582796ef9830235830e37b1c6fdeaf7b65a7f65202",
+      "published_sha256": "a221e714547bd87df98aec582796ef9830235830e37b1c6fdeaf7b65a7f65202"
+    },
+    {
+      "path": "pyproject.toml",
+      "source_path": "pyproject.toml",
+      "source_sha256": "96d9f0e57a81d9ae9f1a30822612e1e94809c8dfc6a0c2b3bda0fa81d0cfdace",
+      "published_sha256": "47c88d2c25cf31cb299fbf7a18c6a6bdc3680f49cdec6485169370b593888953",
+      "derivation": " MIT licensing metadata/documentation approved by the author."
+    },
+    {
+      "path": "registry/database.example.json",
+      "source_path": "registry/database.example.json",
+      "source_sha256": "ffe66549328400a656e58e6bbc54d3e2899b88222a4e18d219254ee0ba2e194f",
+      "published_sha256": "ffe66549328400a656e58e6bbc54d3e2899b88222a4e18d219254ee0ba2e194f"
+    },
+    {
+      "path": "registry/schemas/catalog-config.schema.json",
+      "source_path": "registry/schemas/catalog-config.schema.json",
+      "source_sha256": "1e69ce14500d19286c78a5ddb9139635630365853ca75f8b033c6f28200b7f4d",
+      "published_sha256": "c9d399fb8d1fb281767a8bed1e99893aec432ca028966cb375fa2f769a866b60"
+    },
+    {
+      "path": "registry/schemas/catalog-snapshot.schema.json",
+      "source_path": "registry/schemas/catalog-snapshot.schema.json",
+      "source_sha256": "a7e8220c88e467f6c998a78ae4c93e92f4ee48cd8e7370a477ef40507eaa4c96",
+      "published_sha256": "a7e8220c88e467f6c998a78ae4c93e92f4ee48cd8e7370a477ef40507eaa4c96"
+    },
+    {
+      "path": "registry/schemas/config.schema.json",
+      "source_path": "registry/schemas/config.schema.json",
+      "source_sha256": "c034bd32afda923c6a1ced961cc0f02f65151f4c113fa4f40cc49ec5643e1d8b",
+      "published_sha256": "c034bd32afda923c6a1ced961cc0f02f65151f4c113fa4f40cc49ec5643e1d8b"
+    },
+    {
+      "path": "registry/schemas/live-config.schema.json",
+      "source_path": "registry/schemas/live-config.schema.json",
+      "source_sha256": "7a36297679a5372510e956765da38124f744f7201410f28f016d524b6c4c9d53",
+      "published_sha256": "7a36297679a5372510e956765da38124f744f7201410f28f016d524b6c4c9d53"
+    },
+    {
+      "path": "registry/schemas/manifest.schema.json",
+      "source_path": "registry/schemas/manifest.schema.json",
+      "source_sha256": "aaf39953f274ee8a335e615ded3192e5db001c45e5f45f988b2b86eebc06ea03",
+      "published_sha256": "aaf39953f274ee8a335e615ded3192e5db001c45e5f45f988b2b86eebc06ea03"
+    },
+    {
+      "path": "registry/schemas/operation-policy.schema.json",
+      "source_path": "registry/schemas/operation-policy.schema.json",
+      "source_sha256": "f7113fd43b4a9a34ec480ca1ff17423ccbdfcf7291778f1de938e8b76aed5677",
+      "published_sha256": "f7113fd43b4a9a34ec480ca1ff17423ccbdfcf7291778f1de938e8b76aed5677"
+    },
+    {
+      "path": "registry/schemas/operation-request.schema.json",
+      "source_path": "registry/schemas/operation-request.schema.json",
+      "source_sha256": "5d0037919969524d69e2797c76744732c3d3e0c41c00a3baa90afc42eebeb229",
+      "published_sha256": "5d0037919969524d69e2797c76744732c3d3e0c41c00a3baa90afc42eebeb229"
+    },
+    {
+      "path": "registry/schemas/response.schema.json",
+      "source_path": "registry/schemas/response.schema.json",
+      "source_sha256": "adc8ffe6d427f523ad76af18e032b4af430ed920bef5cae511a410fdb5f5ae96",
+      "published_sha256": "adc8ffe6d427f523ad76af18e032b4af430ed920bef5cae511a410fdb5f5ae96"
+    },
+    {
+      "path": "registry/software.example.json",
+      "source_path": "registry/software.example.json",
+      "source_sha256": "cca1b08511e61c23aa5217182820be150258b9fea40f816631ea40a56e250a23",
+      "published_sha256": "cca1b08511e61c23aa5217182820be150258b9fea40f816631ea40a56e250a23"
+    },
+    {
+      "path": "src/hpc_agent_os/__init__.py",
+      "source_path": "src/hpc_agent_os/__init__.py",
+      "source_sha256": "2c12b8ea17aeb6f9f72a6b02aca218bbc4508a46df9e365a8f6c45ad769e0b34",
+      "published_sha256": "2c12b8ea17aeb6f9f72a6b02aca218bbc4508a46df9e365a8f6c45ad769e0b34"
+    },
+    {
+      "path": "src/hpc_agent_os/catalog.py",
+      "source_path": "src/hpc_agent_os/catalog.py",
+      "source_sha256": "f393ca318503977b68480ed7848fb8dbfd3bf346160a1e3fbda2148a9fbd16c4",
+      "published_sha256": "7e4f0fe89180e6f23c2d4f921a7c92bc2aa1018391b4095ae8d6d40d25e43b99"
+    },
+    {
+      "path": "src/hpc_agent_os/catalog_cli.py",
+      "source_path": "src/hpc_agent_os/catalog_cli.py",
+      "source_sha256": "b70433ea68f3540842b66ea1ae03f151b4d613581063940c951a98931e299c9a",
+      "published_sha256": "b70433ea68f3540842b66ea1ae03f151b4d613581063940c951a98931e299c9a"
+    },
+    {
+      "path": "src/hpc_agent_os/cli.py",
+      "source_path": "src/hpc_agent_os/cli.py",
+      "source_sha256": "51264c5a3b09fa30cf9992b92eea15f6f4c2decfd3073d601058453431756210",
+      "published_sha256": "51264c5a3b09fa30cf9992b92eea15f6f4c2decfd3073d601058453431756210"
+    },
+    {
+      "path": "src/hpc_agent_os/discovery.py",
+      "source_path": "src/hpc_agent_os/discovery.py",
+      "source_sha256": "5495dd4ff67444c131574947e6c63eda2af2ab3c96ed9329adfd0a77ec74c69e",
+      "published_sha256": "5495dd4ff67444c131574947e6c63eda2af2ab3c96ed9329adfd0a77ec74c69e"
+    },
+    {
+      "path": "src/hpc_agent_os/errors.py",
+      "source_path": "src/hpc_agent_os/errors.py",
+      "source_sha256": "17d8a1cf893df076ae6ab354e37990a143a4375b3b3d8ad16e2f7f020c6d6203",
+      "published_sha256": "17d8a1cf893df076ae6ab354e37990a143a4375b3b3d8ad16e2f7f020c6d6203"
+    },
+    {
+      "path": "src/hpc_agent_os/live.py",
+      "source_path": "src/hpc_agent_os/live.py",
+      "source_sha256": "b608ee323c45424efc110259beb027da749ce04c29dbbf0038a40fd4580ac2fc",
+      "published_sha256": "b608ee323c45424efc110259beb027da749ce04c29dbbf0038a40fd4580ac2fc"
+    },
+    {
+      "path": "src/hpc_agent_os/models.py",
+      "source_path": "src/hpc_agent_os/models.py",
+      "source_sha256": "fc07d3d67a72d89ec610b8dc6b62f4f3c35557ff38112f752ba4f5c974ec863e",
+      "published_sha256": "fc07d3d67a72d89ec610b8dc6b62f4f3c35557ff38112f752ba4f5c974ec863e"
+    },
+    {
+      "path": "src/hpc_agent_os/operations.py",
+      "source_path": "src/hpc_agent_os/operations.py",
+      "source_sha256": "646616333001239635ca2326725565ac93a6702498e4260755a34090098784e6",
+      "published_sha256": "646616333001239635ca2326725565ac93a6702498e4260755a34090098784e6"
+    },
+    {
+      "path": "src/hpc_agent_os/operations_cli.py",
+      "source_path": "src/hpc_agent_os/operations_cli.py",
+      "source_sha256": "ca8acdac44c657a25db866d0c787d11a4bfd76a51fc683dc965ae6468c236bf4",
+      "published_sha256": "ca8acdac44c657a25db866d0c787d11a4bfd76a51fc683dc965ae6468c236bf4"
+    },
+    {
+      "path": "src/hpc_agent_os/process.py",
+      "source_path": "src/hpc_agent_os/process.py",
+      "source_sha256": "cac0763be4772c94e7432086593ec9b3a4056a4d07cc530385396a40b2d18643",
+      "published_sha256": "cac0763be4772c94e7432086593ec9b3a4056a4d07cc530385396a40b2d18643"
+    },
+    {
+      "path": "src/hpc_agent_os/publish.py",
+      "source_path": "src/hpc_agent_os/publish.py",
+      "source_sha256": "b46607623d4be85cf70f3e46f4fb83c8c83fa293ea825dfbab7a280380b11eb5",
+      "published_sha256": "b46607623d4be85cf70f3e46f4fb83c8c83fa293ea825dfbab7a280380b11eb5"
+    },
+    {
+      "path": "src/hpc_agent_os/registry.py",
+      "source_path": "src/hpc_agent_os/registry.py",
+      "source_sha256": "a06460f8c3b5dbc8d5327aede8cb55d7fbff811bb176173407ff4291f6bb8f61",
+      "published_sha256": "a06460f8c3b5dbc8d5327aede8cb55d7fbff811bb176173407ff4291f6bb8f61"
+    },
+    {
+      "path": "src/hpc_agent_os/server.py",
+      "source_path": "src/hpc_agent_os/server.py",
+      "source_sha256": "50e19662e0ba924a68c372bdb66f021bc31d8b95805bbe451a46bcf31e256786",
+      "published_sha256": "50e19662e0ba924a68c372bdb66f021bc31d8b95805bbe451a46bcf31e256786"
+    },
+    {
+      "path": "src/hpc_agent_os/service.py",
+      "source_path": "src/hpc_agent_os/service.py",
+      "source_sha256": "80f17980d2a1e714052fd6d910d0129602bb2e60819562879053e13a5c54a662",
+      "published_sha256": "80f17980d2a1e714052fd6d910d0129602bb2e60819562879053e13a5c54a662"
+    },
+    {
+      "path": "src/hpc_agent_os/slurm.py",
+      "source_path": "src/hpc_agent_os/slurm.py",
+      "source_sha256": "5dca611c7468c1e2e0f2eed21eb9be25061841cbac5746c3ded8cd8f301af739",
+      "published_sha256": "5dca611c7468c1e2e0f2eed21eb9be25061841cbac5746c3ded8cd8f301af739"
+    },
+    {
+      "path": "tests/conftest.py",
+      "source_path": "tests/conftest.py",
+      "source_sha256": "9ab97fcbc559d9b236d64339dcede2ebf3031d4e47249b543ae3a2d71f8a83bb",
+      "published_sha256": "9ab97fcbc559d9b236d64339dcede2ebf3031d4e47249b543ae3a2d71f8a83bb"
+    },
+    {
+      "path": "tests/fixtures/registry.json",
+      "source_path": "tests/fixtures/registry.json",
+      "source_sha256": "89ac21e77a15597e6c51f8c27520693e3a78e7f93ebd947ea28fd3ee29a7ccd1",
+      "published_sha256": "89ac21e77a15597e6c51f8c27520693e3a78e7f93ebd947ea28fd3ee29a7ccd1"
+    },
+    {
+      "path": "tests/integration/test_catalog_pg.py",
+      "source_path": "tests/integration/test_catalog_pg.py",
+      "source_sha256": "5b8b556567273f96e8bede606690a53d1fa9b69563dca7e5e549e1a6eb2a8449",
+      "published_sha256": "bad03e60bc4851704ec47ab5b6fb3a7a80eece1924b3b9c09f86d3d224ad6597"
+    },
+    {
+      "path": "tests/integration/test_mcp.py",
+      "source_path": "tests/integration/test_mcp.py",
+      "source_sha256": "62c988f313ad8e453d59fd2e82b9d97a64495ddc1c6cc99882fa36984ae5d3a6",
+      "published_sha256": "62c988f313ad8e453d59fd2e82b9d97a64495ddc1c6cc99882fa36984ae5d3a6"
+    },
+    {
+      "path": "tests/integration/test_operations_pg.py",
+      "source_path": "tests/integration/test_operations_pg.py",
+      "source_sha256": "de02ff14138e7612fdd88ad80f512a9c67be47d7928fa7f73de3fd273896f170",
+      "published_sha256": "f707a78c2c32cc08a53fcc6b3d78d94362a2497ccb419ddc4d24533697b29262"
+    },
+    {
+      "path": "tests/integration/test_registry.py",
+      "source_path": "tests/integration/test_registry.py",
+      "source_sha256": "d72ce09eff6c1b3e9e452862f23e9e981fb6754f3f390848a27625b31112ddae",
+      "published_sha256": "d72ce09eff6c1b3e9e452862f23e9e981fb6754f3f390848a27625b31112ddae"
+    },
+    {
+      "path": "tests/integration/test_skills.py",
+      "source_path": "tests/integration/test_skills.py",
+      "source_sha256": "32a6d0921559680798b3d596639a3a344d42fb80e5e62b0627b97d133139c403",
+      "published_sha256": "32a6d0921559680798b3d596639a3a344d42fb80e5e62b0627b97d133139c403"
+    },
+    {
+      "path": "tests/unit/test_boundaries.py",
+      "source_path": "tests/unit/test_boundaries.py",
+      "source_sha256": "38db30da2f11ab99e08cac76a939bd3cddf9466ea99851290a3fe111f4a7be03",
+      "published_sha256": "38db30da2f11ab99e08cac76a939bd3cddf9466ea99851290a3fe111f4a7be03"
+    },
+    {
+      "path": "tests/unit/test_catalog_discovery.py",
+      "source_path": "tests/unit/test_catalog_discovery.py",
+      "source_sha256": "7df45dfb76772d6840bce1721a03ea950566af90a1255d6bf85e1b4f0dd7214e",
+      "published_sha256": "7b757d7b86c05464a806562838ce1d64d3db05263f007c6beadbcc818421d6b8"
+    },
+    {
+      "path": "tests/unit/test_live.py",
+      "source_path": "tests/unit/test_live.py",
+      "source_sha256": "6fe566233822e92bf7f096f74cbea7d80d271e2a36474b62ad16d241292deedf",
+      "published_sha256": "6fe566233822e92bf7f096f74cbea7d80d271e2a36474b62ad16d241292deedf"
+    },
+    {
+      "path": "tests/unit/test_operations.py",
+      "source_path": "tests/unit/test_operations.py",
+      "source_sha256": "81f752f7bd12b9fd57a886ade0cb8f98f16c208dc81df2a1a20d7727ec739ab8",
+      "published_sha256": "81f752f7bd12b9fd57a886ade0cb8f98f16c208dc81df2a1a20d7727ec739ab8"
+    },
+    {
+      "path": "tests/unit/test_schemas.py",
+      "source_path": "tests/unit/test_schemas.py",
+      "source_sha256": "8d84e13821e31af42b96ccf24a59aa7c6f66cba73290127ddf064da4ed0b75f9",
+      "published_sha256": "8d84e13821e31af42b96ccf24a59aa7c6f66cba73290127ddf064da4ed0b75f9"
+    },
+    {
+      "path": "tests/unit/test_slurm.py",
+      "source_path": "tests/unit/test_slurm.py",
+      "source_sha256": "eb24d4f73f48d7df70bd595ddc704e742f958b7a596df16fe88d06e5f39848c5",
+      "published_sha256": "eb24d4f73f48d7df70bd595ddc704e742f958b7a596df16fe88d06e5f39848c5"
+    },
+    {
+      "path": "uv.lock",
+      "source_path": "uv.lock",
+      "source_sha256": "d3cabb72bf5d5dfc294222fec7590411774f312435bf2d61acef588de7681cb0",
+      "published_sha256": "d3cabb72bf5d5dfc294222fec7590411774f312435bf2d61acef588de7681cb0"
+    },
+    {
+      "path": "verify.sh",
+      "source_path": null,
+      "source_sha256": null,
+      "derivation": "New public-snapshot documentation or validation utility.",
+      "published_sha256": "3525c9aef96cad3a01a0a4cf1c5f0ea2f5a11a5b22b61ae9d18c8bb5fd62c6f5"
+    }
+  ]
+}

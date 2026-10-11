@@ -1,0 +1,66 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "min_bytes": {
+          "default": 1,
+          "maximum": 1073741824,
+          "minimum": 0,
+          "title": "Min Bytes",
+          "type": "integer"
+        },
+        "max_bytes": {
+          "default": 67108864,
+          "maximum": 1073741824,
+          "minimum": 1,
+          "title": "Max Bytes",
+          "type": "integer"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "maxItems": 32,
+      "title": "Artifacts",
+      "type": "array"
+    }
+  },
+  "title": "Verification",
+  "type": "object"
+}

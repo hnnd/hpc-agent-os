@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+app_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+export PYTHONPATH="$app_root/application/src:$app_root/src"
+exec "$app_root/.venv/bin/python" -m hpc_agent_os_app.cli --root "$app_root" "$@"

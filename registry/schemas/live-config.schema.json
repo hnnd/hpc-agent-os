@@ -1,0 +1,77 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "phase": {
+      "const": "phase3-live-readonly",
+      "default": "phase3-live-readonly",
+      "title": "Phase",
+      "type": "string"
+    },
+    "cluster_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "expected_host": {
+      "title": "Expected Host",
+      "type": "string"
+    },
+    "expected_uid": {
+      "exclusiveMinimum": 0,
+      "title": "Expected Uid",
+      "type": "integer"
+    },
+    "transport": {
+      "const": "stdio",
+      "default": "stdio",
+      "title": "Transport",
+      "type": "string"
+    },
+    "allow_mutations": {
+      "const": false,
+      "default": false,
+      "title": "Allow Mutations",
+      "type": "boolean"
+    },
+    "command_timeout_seconds": {
+      "default": 10.0,
+      "exclusiveMinimum": 0,
+      "maximum": 10,
+      "title": "Command Timeout Seconds",
+      "type": "number"
+    },
+    "minimum_interval_seconds": {
+      "default": 30.0,
+      "minimum": 30,
+      "title": "Minimum Interval Seconds",
+      "type": "number"
+    },
+    "cache_ttl_seconds": {
+      "default": 60.0,
+      "maximum": 60,
+      "minimum": 30,
+      "title": "Cache Ttl Seconds",
+      "type": "number"
+    },
+    "max_stale_seconds": {
+      "default": 300.0,
+      "maximum": 300,
+      "minimum": 60,
+      "title": "Max Stale Seconds",
+      "type": "number"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "expected_host",
+    "expected_uid"
+  ],
+  "title": "LiveConfig",
+  "type": "object"
+}

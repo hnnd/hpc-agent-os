@@ -1,0 +1,123 @@
+{
+  "$defs": {
+    "Relocation": {
+      "additionalProperties": false,
+      "properties": {
+        "legacy_root": {
+          "title": "Legacy Root",
+          "type": "string"
+        },
+        "canonical_root": {
+          "title": "Canonical Root",
+          "type": "string"
+        },
+        "backup_root": {
+          "title": "Backup Root",
+          "type": "string"
+        }
+      },
+      "required": [
+        "legacy_root",
+        "canonical_root",
+        "backup_root"
+      ],
+      "title": "Relocation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "expected_host": {
+      "title": "Expected Host",
+      "type": "string"
+    },
+    "expected_uid": {
+      "exclusiveMinimum": 0,
+      "title": "Expected Uid",
+      "type": "integer"
+    },
+    "cluster_id": {
+      "default": "fixture-cluster",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "include_system_packages": {
+      "default": false,
+      "title": "Include System Packages",
+      "type": "boolean"
+    },
+    "public_software_root": {
+      "title": "Public Software Root",
+      "type": "string"
+    },
+    "module_roots": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Module Roots",
+      "type": "array"
+    },
+    "conda_roots": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Conda Roots",
+      "type": "array"
+    },
+    "database_roots": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Database Roots",
+      "type": "array"
+    },
+    "private_roots": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Private Roots",
+      "type": "array"
+    },
+    "relocations": {
+      "items": {
+        "$ref": "#/$defs/Relocation"
+      },
+      "maxItems": 16,
+      "title": "Relocations",
+      "type": "array"
+    },
+    "max_directory_entries": {
+      "default": 2000,
+      "maximum": 5000,
+      "minimum": 1,
+      "title": "Max Directory Entries",
+      "type": "integer"
+    },
+    "max_metadata_files": {
+      "default": 12000,
+      "maximum": 20000,
+      "minimum": 1,
+      "title": "Max Metadata Files",
+      "type": "integer"
+    },
+    "scan_timeout_seconds": {
+      "default": 120,
+      "maximum": 300,
+      "minimum": 1,
+      "title": "Scan Timeout Seconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "expected_host",
+    "expected_uid",
+    "public_software_root",
+    "module_roots",
+    "conda_roots",
+    "database_roots",
+    "private_roots"
+  ],
+  "title": "CatalogConfig",
+  "type": "object"
+}

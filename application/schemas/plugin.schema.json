@@ -1,0 +1,242 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "min_bytes": {
+          "default": 1,
+          "maximum": 1073741824,
+          "minimum": 0,
+          "title": "Min Bytes",
+          "type": "integer"
+        },
+        "max_bytes": {
+          "default": 67108864,
+          "maximum": 1073741824,
+          "minimum": 1,
+          "title": "Max Bytes",
+          "type": "integer"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Resources": {
+      "additionalProperties": false,
+      "properties": {
+        "partition": {
+          "default": "cpu",
+          "enum": [
+            "cpu",
+            "fat"
+          ],
+          "title": "Partition",
+          "type": "string"
+        },
+        "cpus": {
+          "default": 1,
+          "maximum": 8,
+          "minimum": 1,
+          "title": "Cpus",
+          "type": "integer"
+        },
+        "memory_mib": {
+          "default": 1024,
+          "maximum": 16384,
+          "minimum": 256,
+          "title": "Memory Mib",
+          "type": "integer"
+        },
+        "minutes": {
+          "default": 10,
+          "maximum": 120,
+          "minimum": 1,
+          "title": "Minutes",
+          "type": "integer"
+        }
+      },
+      "title": "Resources",
+      "type": "object"
+    },
+    "Rule": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "field": {
+          "enum": [
+            "state",
+            "scheduler_state",
+            "exit_code",
+            "reconciliation_required"
+          ],
+          "title": "Field",
+          "type": "string"
+        },
+        "equals": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Equals"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "next_step": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Next Step",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "field",
+        "equals",
+        "severity",
+        "explanation",
+        "next_step"
+      ],
+      "title": "Rule",
+      "type": "object"
+    },
+    "Template": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "adapter": {
+          "const": "owned-script-v1",
+          "default": "owned-script-v1",
+          "title": "Adapter",
+          "type": "string"
+        },
+        "resources": {
+          "$ref": "#/$defs/Resources"
+        },
+        "verification": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ],
+      "title": "Template",
+      "type": "object"
+    },
+    "Verification": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "maxItems": 32,
+          "title": "Artifacts",
+          "type": "array"
+        }
+      },
+      "title": "Verification",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "api_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Api Version",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Version",
+      "type": "string"
+    },
+    "templates": {
+      "items": {
+        "$ref": "#/$defs/Template"
+      },
+      "maxItems": 32,
+      "title": "Templates",
+      "type": "array"
+    },
+    "diagnostics": {
+      "items": {
+        "$ref": "#/$defs/Rule"
+      },
+      "maxItems": 64,
+      "title": "Diagnostics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "version"
+  ],
+  "title": "Plugin",
+  "type": "object"
+}

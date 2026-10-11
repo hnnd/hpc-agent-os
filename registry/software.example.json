@@ -1,0 +1,25 @@
+{
+  "schema_version": "design-0.1",
+  "synthetic": true,
+  "kind": "software",
+  "releases": [
+    {
+      "id": "software-fixture-1.0",
+      "name": "fixture-software",
+      "version": "1.0",
+      "path": "/fixture/software/1.0",
+      "status": "discovered",
+      "source": "synthetic",
+      "verified": false
+    },
+    {
+      "id": "software-fixture-2.0",
+      "name": "fixture-software",
+      "version": "2.0",
+      "path": "/fixture/software/2.0",
+      "status": "discovered",
+      "source": "synthetic",
+      "verified": false
+    }
+  ]
+}

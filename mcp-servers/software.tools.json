@@ -1,0 +1,161 @@
+[
+  {
+    "name": "search_software",
+    "description": "Search versioned software metadata; never install or execute software.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "SearchRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "cursor": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|[1-9][0-9]{0,8})$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cursor"
+            },
+            "limit": {
+              "default": 100,
+              "maximum": 500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "query": {
+              "default": "",
+              "maxLength": 128,
+              "title": "Query",
+              "type": "string"
+            },
+            "version": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Version"
+            },
+            "platform": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Platform"
+            },
+            "type": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Type"
+            }
+          },
+          "required": [
+            "cluster_id"
+          ],
+          "title": "SearchRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/SearchRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "search_softwareArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "search_softwareDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_software_release",
+    "description": "Read one software release and its verification status.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "GetReleaseRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "release_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Release Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "cluster_id",
+            "release_id"
+          ],
+          "title": "GetReleaseRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/GetReleaseRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "get_software_releaseArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "get_software_releaseDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  }
+]

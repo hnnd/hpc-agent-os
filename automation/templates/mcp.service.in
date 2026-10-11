@@ -1,0 +1,31 @@
+# 审核模板；Phase 3 替换标记并验证，当前不能安装或启动。
+[Unit]
+Description=HPC Agent OS isolated read-only MCP
+After=network.target
+
+[Service]
+Type=simple
+User=@NONPRIVILEGED_USER@
+Group=@NONPRIVILEGED_GROUP@
+WorkingDirectory=@RELEASE_DIRECTORY@
+ExecStart=@LOCKED_PYTHON@ -m @VALIDATED_MCP_ENTRYPOINT@ --config @REVIEWED_CONFIG@
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+UMask=0077
+Restart=on-failure
+RestartSec=10
+# 初始 mock 仅本机；live bridge 访问需要另行批准修改和网络层 ACL。
+IPAddressDeny=any
+IPAddressAllow=localhost
+ReadWritePaths=@ISOLATED_STATE_DIRECTORY@
+
+[Install]
+WantedBy=multi-user.target

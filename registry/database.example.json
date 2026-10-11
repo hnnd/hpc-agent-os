@@ -1,0 +1,25 @@
+{
+  "schema_version": "design-0.1",
+  "synthetic": true,
+  "kind": "database",
+  "releases": [
+    {
+      "id": "database-fixture-1.0",
+      "name": "fixture-database",
+      "version": "1.0",
+      "path": "/fixture/database/1.0",
+      "status": "discovered",
+      "source": "synthetic",
+      "verified": false
+    },
+    {
+      "id": "database-fixture-2.0",
+      "name": "fixture-database",
+      "version": "2.0",
+      "path": "/fixture/database/2.0",
+      "status": "discovered",
+      "source": "synthetic",
+      "verified": false
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "HPC 插件开发"
+  short_description: "为 HPC Agent OS 开发模板和诊断插件，并完成离线契约及行为验证"
+  default_prompt: "使用 $hpc-plugin-developer 开发一个 HPC Agent OS 插件，生成合成测试并完成离线验证。"

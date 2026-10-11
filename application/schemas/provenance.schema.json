@@ -1,0 +1,73 @@
+{
+  "$defs": {
+    "ResourceReference": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "software",
+            "database",
+            "input"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Version",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "version"
+      ],
+      "title": "ResourceReference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "resources": {
+      "items": {
+        "$ref": "#/$defs/ResourceReference"
+      },
+      "maxItems": 64,
+      "title": "Resources",
+      "type": "array"
+    },
+    "evidence": {
+      "const": "user_declared",
+      "default": "user_declared",
+      "title": "Evidence",
+      "type": "string"
+    }
+  },
+  "title": "Provenance",
+  "type": "object"
+}

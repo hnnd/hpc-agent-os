@@ -1,0 +1,120 @@
+{
+  "$defs": {
+    "Resources": {
+      "additionalProperties": false,
+      "properties": {
+        "partition": {
+          "default": "cpu",
+          "enum": [
+            "cpu",
+            "fat"
+          ],
+          "title": "Partition",
+          "type": "string"
+        },
+        "cpus": {
+          "default": 1,
+          "maximum": 8,
+          "minimum": 1,
+          "title": "Cpus",
+          "type": "integer"
+        },
+        "memory_mib": {
+          "default": 1024,
+          "maximum": 16384,
+          "minimum": 256,
+          "title": "Memory Mib",
+          "type": "integer"
+        },
+        "minutes": {
+          "default": 10,
+          "maximum": 120,
+          "minimum": 1,
+          "title": "Minutes",
+          "type": "integer"
+        }
+      },
+      "title": "Resources",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "operation": {
+      "enum": [
+        "job.submit",
+        "job.cancel",
+        "software.install",
+        "database.update"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "idempotency_key": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Idempotency Key",
+      "type": "string"
+    },
+    "script_path": {
+      "anyOf": [
+        {
+          "maxLength": 1024,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Script Path"
+    },
+    "script_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Script Sha256"
+    },
+    "job_id": {
+      "anyOf": [
+        {
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Job Id"
+    },
+    "recipe_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Recipe Id"
+    },
+    "resources": {
+      "$ref": "#/$defs/Resources"
+    }
+  },
+  "required": [
+    "operation",
+    "idempotency_key"
+  ],
+  "title": "OperationRequest",
+  "type": "object"
+}

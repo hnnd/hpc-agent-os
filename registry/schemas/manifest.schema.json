@@ -1,0 +1,227 @@
+{
+  "$defs": {
+    "DatabaseIndex": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "release_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Release Id",
+          "type": "string"
+        },
+        "tool_release_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Tool Release Id",
+          "type": "string"
+        },
+        "parameters_digest": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Parameters Digest",
+          "type": "string"
+        },
+        "index_digest": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Index Digest",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "release_id",
+        "tool_release_id",
+        "parameters_digest",
+        "index_digest"
+      ],
+      "title": "DatabaseIndex",
+      "type": "object"
+    },
+    "Release": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "software",
+            "database"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "platform": {
+          "default": "linux-x86_64",
+          "maxLength": 64,
+          "title": "Platform",
+          "type": "string"
+        },
+        "build_id": {
+          "default": "default",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Build Id",
+          "type": "string"
+        },
+        "type": {
+          "default": "generic",
+          "maxLength": 64,
+          "title": "Type",
+          "type": "string"
+        },
+        "owner": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Owner",
+          "type": "string"
+        },
+        "license": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "License",
+          "type": "string"
+        },
+        "manager": {
+          "enum": [
+            "modules",
+            "conda",
+            "apptainer",
+            "spack",
+            "easybuild",
+            "data"
+          ],
+          "title": "Manager",
+          "type": "string"
+        },
+        "root": {
+          "maxLength": 512,
+          "pattern": "^/fixture/[A-Za-z0-9_./-]+$",
+          "title": "Root",
+          "type": "string"
+        },
+        "module_name": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module Name"
+        },
+        "source": {
+          "const": "synthetic",
+          "default": "synthetic",
+          "title": "Source",
+          "type": "string"
+        },
+        "content_digest": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Content Digest",
+          "type": "string"
+        },
+        "status": {
+          "default": "discovered",
+          "enum": [
+            "discovered",
+            "verified",
+            "published",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "verified": {
+          "default": false,
+          "title": "Verified",
+          "type": "boolean"
+        },
+        "size_bytes": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Size Bytes",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "version",
+        "owner",
+        "license",
+        "manager",
+        "root",
+        "content_digest",
+        "observed_at"
+      ],
+      "title": "Release",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "synthetic": {
+      "const": true,
+      "default": true,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "cluster_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "releases": {
+      "items": {
+        "$ref": "#/$defs/Release"
+      },
+      "maxItems": 10000,
+      "title": "Releases",
+      "type": "array"
+    },
+    "indexes": {
+      "items": {
+        "$ref": "#/$defs/DatabaseIndex"
+      },
+      "maxItems": 10000,
+      "title": "Indexes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "releases"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

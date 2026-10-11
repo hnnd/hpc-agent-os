@@ -1,0 +1,24 @@
+{
+  "api_version": "1.0",
+  "id": "lab",
+  "version": "1.0",
+  "templates": [
+    {
+      "id": "small-report",
+      "description": "Existing owned script producing a nonempty report in its task workspace",
+      "adapter": "owned-script-v1",
+      "resources": {"partition": "cpu", "cpus": 1, "memory_mib": 1024, "minutes": 5},
+      "verification": {"schema_version": "1.0", "artifacts": [{"path": "report.tsv", "min_bytes": 1, "max_bytes": 1048576}]}
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "node-failure",
+      "field": "scheduler_state",
+      "equals": "NODE_FAIL",
+      "severity": "error",
+      "explanation": "Slurm accounting reports a node failure; application correctness remains unknown.",
+      "next_step": "Inspect this job's evidence; prepare a new plan only after checking partial output."
+    }
+  ]
+}

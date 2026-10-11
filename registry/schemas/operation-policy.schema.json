@@ -1,0 +1,126 @@
+{
+  "$defs": {
+    "Recipe": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "software.install",
+            "database.update"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "name": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Version",
+          "type": "string"
+        },
+        "url": {
+          "maxLength": 2048,
+          "title": "Url",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size_bytes": {
+          "exclusiveMinimum": 0,
+          "maximum": 100000000000,
+          "title": "Size Bytes",
+          "type": "integer"
+        },
+        "filename": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Filename",
+          "type": "string"
+        },
+        "license": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "License",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "name",
+        "version",
+        "url",
+        "sha256",
+        "size_bytes",
+        "filename",
+        "license"
+      ],
+      "title": "Recipe",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "expected_host": {
+      "title": "Expected Host",
+      "type": "string"
+    },
+    "expected_uid": {
+      "exclusiveMinimum": 0,
+      "title": "Expected Uid",
+      "type": "integer"
+    },
+    "software_root": {
+      "title": "Software Root",
+      "type": "string"
+    },
+    "database_root": {
+      "title": "Database Root",
+      "type": "string"
+    },
+    "allowed_download_hosts": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Download Hosts",
+      "type": "array"
+    },
+    "recipes": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Recipe"
+      },
+      "title": "Recipes",
+      "type": "object"
+    },
+    "max_pending": {
+      "default": 20,
+      "maximum": 100,
+      "minimum": 1,
+      "title": "Max Pending",
+      "type": "integer"
+    },
+    "maintenance_autoexecute": {
+      "default": false,
+      "title": "Maintenance Autoexecute",
+      "type": "boolean"
+    },
+    "jobs_autoexecute": {
+      "default": false,
+      "title": "Jobs Autoexecute",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "expected_host",
+    "expected_uid",
+    "software_root",
+    "database_root",
+    "allowed_download_hosts"
+  ],
+  "title": "Policy",
+  "type": "object"
+}

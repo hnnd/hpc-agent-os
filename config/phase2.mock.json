@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "phase": "phase2",
+  "cluster_id": "fixture-cluster",
+  "slurm": {
+    "mode": "mock",
+    "live_access_enabled": false,
+    "command_timeout_seconds": 10.0,
+    "max_output_bytes": 1048576,
+    "minimum_poll_interval_seconds": 30.0,
+    "cache_ttl_seconds": 60.0,
+    "max_stale_seconds": 300.0,
+    "max_concurrency": 1
+  },
+  "registry": {
+    "backend": "postgresql",
+    "dsn_secret_ref": "HPC_REGISTRY_DSN"
+  },
+  "transport": "stdio",
+  "allow_mutations": false
+}

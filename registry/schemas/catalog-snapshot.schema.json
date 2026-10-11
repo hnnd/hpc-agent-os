@@ -1,0 +1,262 @@
+{
+  "$defs": {
+    "CatalogRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "software",
+            "database"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 128,
+          "title": "Version",
+          "type": "string"
+        },
+        "root": {
+          "maxLength": 1024,
+          "title": "Root",
+          "type": "string"
+        },
+        "legacy_paths": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 1,
+          "title": "Legacy Paths",
+          "type": "array"
+        },
+        "manager": {
+          "enum": [
+            "existing",
+            "conda",
+            "data"
+          ],
+          "title": "Manager",
+          "type": "string"
+        },
+        "type": {
+          "maxLength": 64,
+          "title": "Type",
+          "type": "string"
+        },
+        "visibility": {
+          "enum": [
+            "public-metadata",
+            "owner-only"
+          ],
+          "title": "Visibility",
+          "type": "string"
+        },
+        "owner_uid": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Owner Uid"
+        },
+        "source": {
+          "const": "filesystem-inventory",
+          "default": "filesystem-inventory",
+          "title": "Source",
+          "type": "string"
+        },
+        "status": {
+          "const": "discovered",
+          "default": "discovered",
+          "title": "Status",
+          "type": "string"
+        },
+        "verified": {
+          "const": false,
+          "default": false,
+          "title": "Verified",
+          "type": "boolean"
+        },
+        "integrity": {
+          "const": "not-checked",
+          "default": "not-checked",
+          "title": "Integrity",
+          "type": "string"
+        },
+        "content_digest": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Digest"
+        },
+        "version_evidence": {
+          "enum": [
+            "directory-name",
+            "package-metadata",
+            "manifest-declared",
+            "unknown"
+          ],
+          "title": "Version Evidence",
+          "type": "string"
+        },
+        "license": {
+          "default": "unknown",
+          "maxLength": 256,
+          "title": "License",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "evidence_paths": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Evidence Paths",
+          "type": "array"
+        },
+        "executables": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Executables",
+          "type": "array"
+        },
+        "module_names": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Module Names",
+          "type": "array"
+        },
+        "declared_checksums": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "maxProperties": 8,
+          "title": "Declared Checksums",
+          "type": "object"
+        },
+        "size_bytes": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size Bytes"
+        },
+        "size_scope": {
+          "default": "not-measured",
+          "enum": [
+            "not-measured",
+            "listed-files-only"
+          ],
+          "title": "Size Scope",
+          "type": "string"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Notes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "version",
+        "root",
+        "manager",
+        "type",
+        "visibility",
+        "owner_uid",
+        "version_evidence",
+        "observed_at"
+      ],
+      "title": "CatalogRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "cluster_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "owner_uid": {
+      "title": "Owner Uid",
+      "type": "integer"
+    },
+    "observed_at": {
+      "format": "date-time",
+      "title": "Observed At",
+      "type": "string"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/CatalogRecord"
+      },
+      "maxItems": 20000,
+      "title": "Records",
+      "type": "array"
+    },
+    "coverage": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 500,
+      "title": "Coverage",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "owner_uid",
+    "observed_at",
+    "records",
+    "coverage"
+  ],
+  "title": "CatalogSnapshot",
+  "type": "object"
+}

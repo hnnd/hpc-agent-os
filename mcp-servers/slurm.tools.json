@@ -1,0 +1,329 @@
+[
+  {
+    "name": "cluster_summary",
+    "description": "Read timestamped aggregate cluster resources; errors never imply zero capacity.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "ClusterRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "cluster_id"
+          ],
+          "title": "ClusterRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/ClusterRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "cluster_summaryArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "cluster_summaryDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_nodes",
+    "description": "Read paginated node resources.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "NodeRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "cursor": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|[1-9][0-9]{0,8})$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cursor"
+            },
+            "limit": {
+              "default": 100,
+              "maximum": 500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "state": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "IDLE",
+                    "ALLOCATED",
+                    "MIXED",
+                    "DOWN",
+                    "DRAIN",
+                    "UNKNOWN"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "State"
+            }
+          },
+          "required": [
+            "cluster_id"
+          ],
+          "title": "NodeRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/NodeRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "list_nodesArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "list_nodesDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_partitions",
+    "description": "Read paginated partition availability.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "PageRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "cursor": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|[1-9][0-9]{0,8})$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cursor"
+            },
+            "limit": {
+              "default": 100,
+              "maximum": 500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "cluster_id"
+          ],
+          "title": "PageRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/PageRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "list_partitionsArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "list_partitionsDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_my_jobs",
+    "description": "Read only the authenticated local user's job summaries.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "JobRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "cursor": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|[1-9][0-9]{0,8})$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cursor"
+            },
+            "limit": {
+              "default": 100,
+              "maximum": 500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "state": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "PENDING",
+                    "RUNNING",
+                    "COMPLETED",
+                    "FAILED",
+                    "CANCELLED",
+                    "TIMEOUT",
+                    "UNKNOWN"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "State"
+            }
+          },
+          "required": [
+            "cluster_id"
+          ],
+          "title": "JobRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/JobRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "list_my_jobsArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "list_my_jobsDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_my_job",
+    "description": "Read an owned job; unavailable or foreign jobs are denied identically.",
+    "inputSchema": {
+      "type": "object",
+      "$defs": {
+        "GetJobRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "cluster_id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$",
+              "title": "Cluster Id",
+              "type": "string"
+            },
+            "job_id": {
+              "pattern": "^[1-9][0-9]{0,17}(?:_[0-9]{1,10})?$",
+              "title": "Job Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "cluster_id",
+            "job_id"
+          ],
+          "title": "GetJobRequest",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/GetJobRequest"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "get_my_jobArguments"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "title": "get_my_jobDictOutput",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  }
+]
